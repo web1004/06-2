@@ -1,31 +1,20 @@
 @import url(common.css);
 
-/* Layout */
+/* Header */
 #header{
   position: fixed;
   z-index: 1000;
-  width: 100vw;
+  width: 100%;
   height: 70px;
   background: rgba(255, 255, 255, 0.3);
 }
-#container{
-  width: 400vw; 
-  display: flex;
-  color: #fff;
-}
-
-
-/* Header */
 #header h1{
   position: absolute;
   left: 20px;
   top: 10px;
   font-size: 32px;
 }
-#header h1 a{
-  color: #fff;
-}
-
+#header h1 a{color: #fff;}
 #gnb{
   position: absolute;
   right: 20px;
@@ -36,10 +25,9 @@
   padding: 0 20px;
   color: #fff;
 }
-#gnb li a:hover{
-  color: #000;
-}
+#gnb li a:hover{color: #000;}
 
+/* Page Number */
 #tt { 
   position:fixed; 
   z-index:1000; 
@@ -51,27 +39,27 @@
   color:white; 
 }
 
-/* 아래 클릭버튼 */
+/* Dot Button */
 #dot{
   position:fixed; 
   z-index:1000; 
-  left: 50%; 
-  bottom: 4%;
-  transform: translateX(-50%);
+  right:10%; 
+  top:50%;
+  transform: translateY(-50%);
 }
 #dot span{
-  display: inline-block;
+  display: block;
   width: 10px;
   height: 10px;
   border-radius: 50%;
   background-color: #fff;
-  margin: 0 5px;
+  margin: 20px 0;
   cursor: pointer;
 }
 #dot span.active{
-  display: inline-block;
-  width: 60px;
-  height: 10px;
+  display: block;
+  width: 10px;
+  height: 60px;
   border-radius: 15px;
   background-color: crimson;
   cursor: pointer;
@@ -79,41 +67,33 @@
 }
 
 /* Container */
-.inner{
-  margin: auto;
-  width: 1200px;
+#container{
+  /* width: 400vw; */  /* 섹션개수 전체폭 */
+  width: calc(400vw - (400vw - 400%)); /*->스클로바 포함*/
+  display: flex; 
+  color: #fff;
 }
+.inner{
+  width: 1200px;
+  margin: auto;
+}
+#container h2 { 
+  font-size:250px; 
+  padding-top:70px; 
+  font-weight:100; 
+  letter-spacing:-10px; 
+}
+
 #home{
   width: 100vw;
   height: 100vh;
   background-color: yellowgreen;
 }
+
 #about{
-  position: relative;
   width: 100vw;
   height: 100vh;
   background-color: royalblue;
-  overflow: hidden;
-}
-.about_contents{
-  /* border: 1px solid #000; */
-  width: 400px;
-  height: 700px;
-  position: absolute;
-  right: 15%;
-  bottom: 50px;
-}
-.about_contents p:nth-child(2){  /* mobile-1 */
-  position: absolute;
-  top: 120%;
-  right: 0;
-}
-.about_contents p:nth-child(1){ /* mobile-2 */
-  position: absolute;
-  top: 40px;
-  /* right: 250px; */
-  right: 25px;
-  opacity: 0;
 }
 
 #works{
@@ -121,15 +101,9 @@
   height: 100vh;
   background-color: orange;
 }
+
 #contact{
   width: 100vw;
   height: 100vh;
   background-color: #333;
-}
-
-#container h2 { 
-  font-size:250px; 
-  padding-top:70px; 
-  font-weight:100; 
-  letter-spacing:-10px; 
 }
